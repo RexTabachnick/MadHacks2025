@@ -20,6 +20,7 @@ const MyCouponsScreen = () => {
       .then(data => {
         console.log("✅ Backend coupons:", data);
         setCoupons(Object.values(data));
+        console.log("✅ Backend coupons:", data);
       })
       .catch(err => {
         console.log("❌ Backend failed, using dummy data:", err);
@@ -43,9 +44,10 @@ const MyCouponsScreen = () => {
             <TouchableOpacity onPress={() => removeCoupon(item)}>
               <Feather name="check-square" size={24} color="black" />
             </TouchableOpacity>
-            <Text style={styles.listTitleText}>{item.date}</Text>
-            <Text style={styles.listTitleText}>{item.name}</Text>
-            <Text style={styles.listSubtitleText}>{item.description}</Text>
+            <Text style={styles.listTitle}>{item.store}</Text>
+            <Text style={styles.listSubtitle}>{item.offer}</Text>
+            <Text style={styles.listDate}>{item.expires}</Text>
+
           </View>
         )}
       />
