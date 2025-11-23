@@ -1,7 +1,19 @@
 package com.hackathon.popopop;
 
-import org.springframework.web.bind.annotation.*;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("/api/coupons")
@@ -40,5 +52,15 @@ public class CouponController {
     @GetMapping
     public Collection<Coupon> getCoupons() {
         return coupons.values();
+    }
+
+    @PutMapping
+    public void updateCoupon(@RequestBody Coupon coupon) {
+        coupons.replace(coupon.getId(), coupon);
+    }
+
+    @DeleteMapping
+    public void deleteProduct(@RequestBody Coupon coupon) {
+        coupons.remove(coupon.getId());
     }
 }
