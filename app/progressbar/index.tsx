@@ -23,7 +23,7 @@ const ProgressBarScreen = () => {
 
     return (<View style={styles.base}>
 
-        <View style={[styles.base, { padding: 20 }]}>
+        <View style={[ { padding: 20 }, {width: "100%"}]}>
       <Text style={localStyles.title}>Progress Bar</Text>
 
       <Text style={localStyles.label}>Goal (number of coupons)</Text>
