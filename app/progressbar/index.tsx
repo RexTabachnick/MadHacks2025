@@ -22,8 +22,6 @@ const ProgressBarScreen = () => {
 
 
     return (<View style={styles.base}>
-        <Text>Progress Bar Screen</Text>
-
 
         <View style={[styles.base, { padding: 20 }]}>
       <Text style={localStyles.title}>Progress Bar</Text>
@@ -42,6 +40,7 @@ const ProgressBarScreen = () => {
         title="Use One Coupon"
         onPress={() => setUsed((prev) => prev + 1)}
         disabled={!numericGoal}
+        color='#3C5233'
       />
 
       <View style={{ marginVertical: 30 }}>

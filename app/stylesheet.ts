@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-          
+        backgroundColor: '#C0DFA1'
     },
     title: {
         fontSize: 28, 
@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
         marginVertical: 16
     },
     button: {
-        backgroundColor: '#6BC7FF', 
+        backgroundColor: '#3C5233', 
         paddingVertical: 12,
         paddingHorizontal: 25,
         borderRadius: 8,
@@ -45,6 +45,9 @@ export const styles = StyleSheet.create({
         borderRadius: 8,
         marginVertical: 8,
         backgroundColor: "white",
-      }
+    },
+    white_text: {
+        color:'#FFFFFF'
+    }
       
 });

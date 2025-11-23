@@ -14,14 +14,14 @@ export default function Index() {
         style={styles.button} 
         onPress={() => {router.push('/addcoupons')}}
       >
-        <Text>Add a coupon/find coupons</Text>
+        <Text style={styles.white_text}>Add a coupon/find coupons</Text>
       </TouchableOpacity>
 
       <TouchableOpacity 
         style={styles.button} 
         onPress={() => {router.push('/progressbar')}}
       >
-        <Text>Progress bar
+        <Text style={styles.white_text}>Progress bar
         </Text>
       </TouchableOpacity>
 
@@ -29,7 +29,7 @@ export default function Index() {
         style={styles.button} 
         onPress={() => {router.push('/mycoupons')}}
       >
-        <Text>My Coupons
+        <Text style={styles.white_text}>My Coupons
         </Text>
       </TouchableOpacity>
 
@@ -37,7 +37,7 @@ export default function Index() {
         style={styles.button} 
         onPress={() => {router.push('/unctracker')}}
       >
-        <Text>UNC TRACKER UNC TRACKER
+        <Text style={styles.white_text}>UNC TRACKER UNC TRACKER
         </Text>
       </TouchableOpacity>
 
