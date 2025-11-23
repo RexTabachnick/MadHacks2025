@@ -1,5 +1,4 @@
-import coupons from './coupons.json'
-import * as fs from 'fs';
+import coupons from './coupons.json';
 
 export function getCoupons() {
     return coupons;

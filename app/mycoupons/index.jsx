@@ -2,10 +2,11 @@ import Feather from "@expo/vector-icons/Feather";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import * as Dummy from "../dummy_backend/couponsManager";
 import { styles } from "../stylesheet";
 
 // ❌ OLD dummy backend import
-// import { getCoupons, removeCoupon } from "../dummy_backend/couponsManager";
+import { removeCoupon } from "../dummy_backend/couponsManager";
 
 // ✅ Keep access to dummy functions for fallback
 
