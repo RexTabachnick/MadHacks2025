@@ -1,5 +1,4 @@
 import { Stack } from "expo-router";
-
 const MyCouponsLayout = () => {
     return <Stack
         screenOptions={{

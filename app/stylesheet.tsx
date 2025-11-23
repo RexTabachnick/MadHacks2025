@@ -9,11 +9,11 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontSize: 28, 
-        marginBottom: 28
+        marginVertical: 28
     },
     subtitle: {
         fontSize: 16,
-        marginBottom: 28
+        marginVertical: 16
     },
     button: {
         backgroundColor: '#6BC7FF', 
@@ -23,9 +23,18 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         marginVertical: 12
     },
-    listitem: {
-        flex: 1,
-        padding: 20,
-        backgroundColor: '#ffffff'
+    listItem: {
+        
+        justifyContent: 'space-between', 
+        backgroundColor: '#ebebeb', 
+        padding: 15,
+        borderRadius: 5,
+        marginVertical: 5
+    }, 
+    listTitleText: {
+        fontSize: 20
+    },
+    listSubtitleText: {
+        fontSize: 16
     }
 });
