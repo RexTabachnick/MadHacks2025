@@ -7,8 +7,8 @@ export default function Index() {
   return (<View
       style={styles.base}
     >
-      <Text style={styles.title}>Edit app/index.tsx to edit this screen.</Text>
-      <Text style={styles.subtitle}>peepeepoopoo</Text>
+      <Text style={styles.title}>Keep track of your coupons</Text>
+      <Text style={styles.subtitle}>Get started by finding or uploading coupons</Text>
       
       <TouchableOpacity 
         style={styles.button} 

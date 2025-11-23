@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "date": "2026-01-01",
+        "name": "Example Coupon",
+        "description":
+          "This is a description of the coupon - may want to limit char length"
+      },
+      {
+        "id": 2,
+        "date": "2025-12-31",
+        "name": "6 7",
+        "description":
+          "this is a coupon for 67% off 67"
+      }
+]
