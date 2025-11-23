@@ -36,5 +36,15 @@ export const styles = StyleSheet.create({
     },
     listSubtitleText: {
         fontSize: 16
-    }
+    },
+    input: {
+        width: "80%",
+        padding: 10,
+        borderWidth: 1,
+        borderColor: "#ccc",
+        borderRadius: 8,
+        marginVertical: 8,
+        backgroundColor: "white",
+      }
+      
 });
