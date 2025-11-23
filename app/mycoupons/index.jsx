@@ -28,23 +28,26 @@ const MyCouponsScreen = () => {
   }, []);
   
   async function deleteCoupon(coupon) {
-    try {
-      const response = await fetch("http://localhost:8080/api/coupons", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(coupon),
-      });
+    fetch("http://localhost:8080/api/coupons", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(coupon),
+    })
+    .then(
+      console.log("✅ Coupon deleted successfully"),
+      // setCoupons(prevCoupons => prevCoupons.filter(c => c.id !== coupon.id));
+      setCoupons(coupons)
+    )
+    .catch(err => {
+      console.log("❌ Error deleting coupon:", err);
+    });
+  }
 
-      if (!response.ok) {
-        throw new Error(`Failed to delete coupon: ${response.status}`);
-      }
-
-      // Remove coupon locally from state to update UI
-      setCoupons(prevCoupons => prevCoupons.filter(c => c.id !== coupon.id));
-      console.log("Coupon deleted successfully");
-    } catch (error) {
-      console.error("Error deleting coupon:", error);
-    }
+  async function updateCoupon(coupon) {
+    router.push({
+      pathname: "/updatecoupon",
+      params: {couponObj: JSON.stringify(coupon)}
+    })
   }
 
   return (
@@ -60,6 +63,9 @@ const MyCouponsScreen = () => {
           <View style={styles.listItem}>
             <TouchableOpacity onPress={() => deleteCoupon(item)}>
               <Feather name="check-square" size={24} color="black" />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => updateCoupon(item)}>
+              <Feather name="check-square" size={24} color="blue" />
             </TouchableOpacity>
             <Text style={styles.listTitle}>{item.store}</Text>
             <Text style={styles.listSubtitle}>{item.offer}</Text>
