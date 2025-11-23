@@ -1,9 +1,13 @@
 import Feather from "@expo/vector-icons/Feather";
 import { useRouter } from "expo-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import * as Dummy from "../dummy_backend/couponsManager";
 import { styles } from "../stylesheet";
+import {
+  CouponsContextProvider,
+  CouponsContext,
+} from "@/app/CouponsContext.js";
 
 // ❌ OLD dummy backend import
 
@@ -11,7 +15,21 @@ import { styles } from "../stylesheet";
 
 const MyCouponsScreen = () => {
   const router = useRouter();
-  const [coupons, setCoupons] = useState([]);
+  const [coupons, setCoupons] = useState([
+    {
+      id: 1,
+      expires: "2026-01-01",
+      store: "Example Coupon",
+      offer:
+        "This is a description of the coupon - may want to limit char length",
+    },
+    {
+      id: 2,
+      expires: "2025-12-31",
+      store: "6 7",
+      offer: "this is a coupon for 67% off 67",
+    },
+  ]);
 
   useEffect(() => {
     fetch("http://localhost:8080/api/coupons")
@@ -23,7 +41,6 @@ const MyCouponsScreen = () => {
       })
       .catch(err => {
         console.log("❌ Backend failed, using dummy data:", err);
-        setCoupons(Dummy.getCoupons());
       });
   }, []);
   
@@ -52,7 +69,12 @@ const MyCouponsScreen = () => {
   return (
     <View style={styles.base}>
       <Text style={styles.title}>My Coupons</Text>
-      <TouchableOpacity style={styles.button} onPress={() => {router.push('/addcoupons')}}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          router.push("/addcoupons");
+        }}
+      >
         <Text>Add coupons</Text>
       </TouchableOpacity>
       <FlatList
@@ -60,16 +82,15 @@ const MyCouponsScreen = () => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.listItem}>
-            <TouchableOpacity onPress={() => deleteCoupon(item)}>
+            <TouchableOpacity /*onPress={() => deleteCoupon(item)}*/>
               <Feather name="check-square" size={24} color="black" />
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => updateCoupon(item)}>
+            <TouchableOpacity /*onPress={() => updateCoupon(item)}*/>
               <Feather name="check-square" size={24} color="blue" />
             </TouchableOpacity>
             <Text style={styles.listTitle}>{item.store}</Text>
             <Text style={styles.listSubtitle}>{item.offer}</Text>
             <Text style={styles.listDate}>{item.expires}</Text>
-
           </View>
         )}
       />
