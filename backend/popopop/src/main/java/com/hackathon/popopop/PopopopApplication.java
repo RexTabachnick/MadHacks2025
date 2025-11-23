@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PopopopApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PopopopApplication.class, args);
+		//SpringApplication.run(PopopopApplication.class, args);
+		var orderService = new OrderService();
+		orderService.setPaymentService(new StripePaymentService());
+		orderService.placeOrder();
 	}
 
 }
