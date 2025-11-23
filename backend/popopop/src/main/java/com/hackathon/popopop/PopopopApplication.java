@@ -1,4 +1,4 @@
-package main.java.com.popopop.demo;
+package com.hackathon.popopop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,8 +9,5 @@ public class PopopopApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PopopopApplication.class, args);
 	}
-
-}
-public class StoreApplication {
 
 }
