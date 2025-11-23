@@ -1,7 +1,12 @@
 {
+<<<<<<< HEAD
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit",
     "source.sortMembers": "explicit"
   }
 }
+=======
+    "java.compile.nullAnalysis.mode": "automatic"
+}
+>>>>>>> backend

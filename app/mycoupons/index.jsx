@@ -15,11 +15,11 @@ const MyCouponsScreen = () => {
   const [coupons, setCoupons] = useState([]);
 
   useEffect(() => {
-    fetch("http://192.168.1.xxx:8080/api/coupons")
+    fetch("http://10.4.51.72:8080/api/coupons")
       .then(res => res.json())
       .then(data => {
         console.log("✅ Backend coupons:", data);
-        setCoupons(data);
+        setCoupons(Object.values(data));
       })
       .catch(err => {
         console.log("❌ Backend failed, using dummy data:", err);
