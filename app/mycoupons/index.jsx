@@ -35,8 +35,7 @@ const MyCouponsScreen = () => {
     })
     .then(
       console.log("✅ Coupon deleted successfully"),
-      // setCoupons(prevCoupons => prevCoupons.filter(c => c.id !== coupon.id));
-      setCoupons(coupons)
+      setCoupons(prevCoupons => prevCoupons.filter(c => c.id !== coupon.id))
     )
     .catch(err => {
       console.log("❌ Error deleting coupon:", err);
