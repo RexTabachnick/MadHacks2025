@@ -2,22 +2,30 @@ import Feather from "@expo/vector-icons/Feather";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
-import { removeCoupon } from "../dummy_backend/couponsManager";
 import { styles } from "../stylesheet";
+
+// ❌ OLD dummy backend import
+// import { getCoupons, removeCoupon } from "../dummy_backend/couponsManager";
+
+// ✅ Keep access to dummy functions for fallback
 
 const MyCouponsScreen = () => {
   const router = useRouter();
-  const [coupons, setCoupons] = useState();
+  const [coupons, setCoupons] = useState([]);
 
   useEffect(() => {
     fetch("http://192.168.1.xxx:8080/api/coupons")
       .then(res => res.json())
       .then(data => {
-        console.log("Fetched coupons:", data);
+        console.log("✅ Backend coupons:", data);
         setCoupons(data);
       })
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.log("❌ Backend failed, using dummy data:", err);
+        setCoupons(Dummy.getCoupons());
+      });
   }, []);
+  
   
 
   return (
