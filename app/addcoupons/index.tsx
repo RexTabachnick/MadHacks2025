@@ -33,7 +33,7 @@ export default function AddCouponScreen() {
   const [expires, setExpires] = useState("");
 
   const addCoupon = () => {
-    fetch("http://10.4.51.72:8080/api/coupons", {
+    fetch("http://localhost:8080/api/coupons", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

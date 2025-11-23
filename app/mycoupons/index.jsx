@@ -15,7 +15,7 @@ const MyCouponsScreen = () => {
   const [coupons, setCoupons] = useState([]);
 
   useEffect(() => {
-    fetch("http://10.4.51.72:8080/api/coupons")
+    fetch("http://localhost:8080/api/coupons")
       .then(res => res.json())
       .then(data => {
         console.log("✅ Backend coupons:", data);
