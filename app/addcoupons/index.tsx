@@ -9,12 +9,10 @@ const AddCouponScreen = () => {
         <Text>My Coupons</Text>
       </TouchableOpacity>
         <Text style={styles.title}>Upload a coupon</Text>
-        <TouchableOpacity>
-        </TouchableOpacity>
+        
         
         <Text style={styles.subtitle}>or</Text>
         <Text style={styles.title}>Browse coupons online</Text>
-
 
     </View>
     )

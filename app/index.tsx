@@ -33,6 +33,14 @@ export default function Index() {
         </Text>
       </TouchableOpacity>
 
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => {router.push('/unctracker')}}
+      >
+        <Text>UNC TRACKER UNC TRACKER
+        </Text>
+      </TouchableOpacity>
+
 
     </View>
   );

@@ -3,7 +3,7 @@ import { styles } from "../stylesheet";
 import { useState } from "react";
 import Feather from "@expo/vector-icons/Feather";
 import { useRouter } from "expo-router";
-import { getCoupons } from "../dummy_backend/couponsManager";
+import { getCoupons, removeCoupon } from "../dummy_backend/couponsManager";
 
 const MyCouponsScreen = () => {
   const router = useRouter();
@@ -20,7 +20,7 @@ const MyCouponsScreen = () => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.listItem}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => removeCoupon(item)}>
               <Feather name="check-square" size={24} color="black" />
             </TouchableOpacity>
             <Text style={styles.listTitleText}>{item.date}</Text>
