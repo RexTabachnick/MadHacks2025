@@ -42,7 +42,7 @@ export default function Index() {
           style={styles.button}
           onPress={() => { router.push('/unctracker') }}
         >
-          <Text style={styles.white_text}>UNC TRACKER UNC TRACKER
+          <Text style={styles.white_text}>UNC TRACKER
           </Text>
         </TouchableOpacity>
 

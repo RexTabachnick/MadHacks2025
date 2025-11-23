@@ -4,6 +4,7 @@ import { useEffect, useState, useContext } from "react";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 import * as Dummy from "../dummy_backend/couponsManager";
 import { styles } from "../stylesheet";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   CouponsContextProvider,
   CouponsContext,
@@ -82,10 +83,10 @@ const MyCouponsScreen = () => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.listItem}>
-            <TouchableOpacity /*onPress={() => deleteCoupon(item)}*/>
+            <TouchableOpacity onPress={() => deleteCoupon(item)}>
               <Feather name="check-square" size={24} color="black" />
             </TouchableOpacity>
-            <TouchableOpacity /*onPress={() => updateCoupon(item)}*/>
+            <TouchableOpacity onPress={() => updateCoupon(item)}>
               <Feather name="check-square" size={24} color="blue" />
             </TouchableOpacity>
             <Text style={styles.listTitle}>{item.store}</Text>
